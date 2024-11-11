@@ -31,40 +31,23 @@ class GameInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(18.0),
-      child: Column(
+      child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            children: [
-              const Spacer(),
-              Text(
-                "Сейчас ходит:",
-                style: Theme.of(context).textTheme.displaySmall,
-              ),
-              const Card(
-                  color: Colors.blue,
-                  child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Icon(Icons.close),
-                  )),
-              const Spacer(),
-            ],
+          const Spacer(),
+          Text(
+            "Сейчас ходит : ",
+            style: Theme.of(context).textTheme.displaySmall,
           ),
-          const Divider(),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Column(
-                children: [
-                  const Text("Фигур:"),
-                  Text(
-                    "56",
-                    style: TextStyle(color: Colors.grey.shade500),
-                  )
-                ],
-              )
-            ],
-          )
+          const Card(
+              color: Colors.blue,
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.close),
+              )),
+          const Spacer(),
         ],
       ),
     );

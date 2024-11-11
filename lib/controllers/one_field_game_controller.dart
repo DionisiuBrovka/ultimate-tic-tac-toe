@@ -9,20 +9,8 @@ class OneFieldGameController {
   Cell? win;
 
   OneFieldGameController(
-      {this.cells = const [
-        Cell.empty,
-        Cell.empty,
-        Cell.empty,
-        Cell.empty,
-        Cell.empty,
-        Cell.empty,
-        Cell.empty,
-        Cell.empty,
-        Cell.empty,
-      ],
-      this.isActive = false,
-      this.isClose = false,
-      this.win});
+      {this.isActive = false, this.isClose = false, this.win})
+      : cells = List.filled(9, Cell.empty);
 
   void cheakGame() {
     if (cells[0] == cells[1] && cells[1] == cells[2]) {

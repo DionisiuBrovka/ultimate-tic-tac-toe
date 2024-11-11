@@ -18,21 +18,33 @@ class GameViewholder extends StatelessWidget {
             crossAxisCount: 3,
             physics: const NeverScrollableScrollPhysics(),
             children: const [
-              OneFieldViewholder(),
-              OneFieldViewholder(),
               OneFieldViewholder(
-                isXWin: true,
+                isActive: true,
               ),
               OneFieldViewholder(
                 isActive: true,
               ),
-              OneFieldViewholder(),
-              OneFieldViewholder(),
-              OneFieldViewholder(),
               OneFieldViewholder(
-                isXWin: false,
+                isActive: true,
               ),
-              OneFieldViewholder(),
+              OneFieldViewholder(
+                isActive: true,
+              ),
+              OneFieldViewholder(
+                isActive: true,
+              ),
+              OneFieldViewholder(
+                isActive: true,
+              ),
+              OneFieldViewholder(
+                isActive: true,
+              ),
+              OneFieldViewholder(
+                isActive: true,
+              ),
+              OneFieldViewholder(
+                isActive: true,
+              ),
             ],
           ),
         ),

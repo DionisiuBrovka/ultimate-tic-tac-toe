@@ -33,19 +33,11 @@ class OneFieldViewholder extends StatelessWidget {
           children: const [
             GameCell(),
             GameCell(),
-            GameCell(
-              isXSelected: false,
-            ),
             GameCell(),
-            GameCell(
-              isXSelected: false,
-            ),
-            GameCell(
-              isXSelected: true,
-            ),
-            GameCell(
-              isXSelected: true,
-            ),
+            GameCell(),
+            GameCell(),
+            GameCell(),
+            GameCell(),
             GameCell(),
             GameCell(),
           ],
