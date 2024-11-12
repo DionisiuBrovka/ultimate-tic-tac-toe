@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_proj/pages/game_page/game_page_controller.dart';
 import 'package:test_proj/widgets/game_viewholder.dart';
 
 class GamePage extends StatelessWidget {
@@ -6,18 +7,34 @@ class GamePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Spacer(),
-            GameInfo(),
-            Spacer(),
-            GameViewholder(),
-            Spacer(),
-          ],
-        ),
-      ),
+    final pageController = GamePageController();
+
+    return Scaffold(
+      body: ValueListenableBuilder(
+          valueListenable: pageController.isGameStartNotifier,
+          builder: (context, state, child) {
+            if (state) {
+              return const Center(
+                child: Column(
+                  children: [
+                    Spacer(),
+                    GameInfo(),
+                    GameViewholder(),
+                    Spacer(),
+                  ],
+                ),
+              );
+            } else {
+              return Center(
+                child: FilledButton(
+                    onPressed: () => pageController.startGame(),
+                    child: const Padding(
+                      padding: EdgeInsets.all(28.0),
+                      child: Text("Начать"),
+                    )),
+              );
+            }
+          }),
     );
   }
 }

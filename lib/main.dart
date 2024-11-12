@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:test_proj/pages/game_page/game_page.dart';
+import 'package:test_proj/services/service_locator.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupServiceLocator();
   runApp(const MainApp());
 }
 
